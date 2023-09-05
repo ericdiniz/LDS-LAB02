@@ -1,3 +1,3 @@
-# Documentação do Projeto
+# Código do Projeto
 
-Inclua documentação do projeto, como relatórios da PROEX.
+Aqui deverá conter o código produzido.
