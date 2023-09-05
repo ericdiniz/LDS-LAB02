@@ -1,7 +1,7 @@
 # Diagramas do Projeto
 
 ### Diagrama de Caso de Uso
-![diagrama de caso de uso](./Projeto/../DCU.png)
+![diagrama de caso de uso](./DCU.png)
 
 ### REQUISITOS FUNCIONAIS
 
