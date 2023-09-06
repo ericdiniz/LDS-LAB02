@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-09-06T15:41:55.493Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="N1TaOdFi9JM3cELHN7-u" version="21.7.2" type="device" pages="3">
+<mxfile host="app.diagrams.net" modified="2023-09-06T17:58:08.116Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36" etag="jLjQpIH9-LDXUm90N70l" version="21.7.2" type="device" pages="3">
   <diagram name="DCU-v1" id="PuUk3Px8iHBImMjK49Wq">
     <mxGraphModel dx="1194" dy="610" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -161,48 +161,82 @@
     </mxGraphModel>
   </diagram>
   <diagram id="0UVISJXXg_RbUOwi_DtK" name="Pacote-v1">
-    <mxGraphModel dx="1038" dy="530" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1193" dy="763" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="tO6OiS4Cmi07xufjR7gt-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tO6OiS4Cmi07xufjR7gt-1" target="tO6OiS4Cmi07xufjR7gt-3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="tO6OiS4Cmi07xufjR7gt-19" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tO6OiS4Cmi07xufjR7gt-1" target="tO6OiS4Cmi07xufjR7gt-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="tO6OiS4Cmi07xufjR7gt-1" value="&amp;lt;&amp;lt;Layer&amp;gt;&amp;gt;&lt;br&gt;User Interface&lt;br&gt;Companies and Banks" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="130" y="220" width="190" height="120" as="geometry" />
+          <mxGeometry x="30" y="220" width="190" height="120" as="geometry" />
         </mxCell>
         <mxCell id="tO6OiS4Cmi07xufjR7gt-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tO6OiS4Cmi07xufjR7gt-3" target="tO6OiS4Cmi07xufjR7gt-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="tO6OiS4Cmi07xufjR7gt-20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tO6OiS4Cmi07xufjR7gt-3" target="tO6OiS4Cmi07xufjR7gt-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="tO6OiS4Cmi07xufjR7gt-3" value="&amp;lt;&amp;lt;Layer&amp;gt;&amp;gt;&lt;br&gt;Business Logic&lt;br&gt;Companies and Banks" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="130" y="400" width="190" height="120" as="geometry" />
+          <mxGeometry x="30" y="400" width="190" height="120" as="geometry" />
         </mxCell>
         <mxCell id="tO6OiS4Cmi07xufjR7gt-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tO6OiS4Cmi07xufjR7gt-4" target="tO6OiS4Cmi07xufjR7gt-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="125" y="830" />
+              <mxPoint x="414" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tO6OiS4Cmi07xufjR7gt-21" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tO6OiS4Cmi07xufjR7gt-4" target="tO6OiS4Cmi07xufjR7gt-17">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tO6OiS4Cmi07xufjR7gt-4" value="&amp;lt;&amp;lt;Layer&amp;gt;&amp;gt;&lt;br&gt;Interaction Database&lt;br&gt;Companies and Banks" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="130" y="570" width="190" height="120" as="geometry" />
+          <mxGeometry x="30" y="570" width="190" height="120" as="geometry" />
         </mxCell>
         <mxCell id="tO6OiS4Cmi07xufjR7gt-6" value="Database" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="319" y="850" width="190" height="120" as="geometry" />
+          <mxGeometry x="319" y="970" width="190" height="120" as="geometry" />
         </mxCell>
         <mxCell id="tO6OiS4Cmi07xufjR7gt-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tO6OiS4Cmi07xufjR7gt-12" target="tO6OiS4Cmi07xufjR7gt-14">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="tO6OiS4Cmi07xufjR7gt-23" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tO6OiS4Cmi07xufjR7gt-12" target="tO6OiS4Cmi07xufjR7gt-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="tO6OiS4Cmi07xufjR7gt-12" value="&amp;lt;&amp;lt;Layer&amp;gt;&amp;gt;&lt;br&gt;User Interface&lt;br&gt;Customer" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="480" y="220" width="190" height="120" as="geometry" />
+          <mxGeometry x="610" y="220" width="190" height="120" as="geometry" />
         </mxCell>
         <mxCell id="tO6OiS4Cmi07xufjR7gt-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tO6OiS4Cmi07xufjR7gt-14" target="tO6OiS4Cmi07xufjR7gt-15">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="tO6OiS4Cmi07xufjR7gt-24" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tO6OiS4Cmi07xufjR7gt-14" target="tO6OiS4Cmi07xufjR7gt-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="tO6OiS4Cmi07xufjR7gt-14" value="&amp;lt;&amp;lt;Layer&amp;gt;&amp;gt;&lt;br&gt;Business Logic&lt;br&gt;Customer" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="480" y="400" width="190" height="120" as="geometry" />
+          <mxGeometry x="610" y="400" width="190" height="120" as="geometry" />
         </mxCell>
         <mxCell id="tO6OiS4Cmi07xufjR7gt-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tO6OiS4Cmi07xufjR7gt-15" target="tO6OiS4Cmi07xufjR7gt-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="705" y="830" />
+              <mxPoint x="414" y="830" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tO6OiS4Cmi07xufjR7gt-25" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="tO6OiS4Cmi07xufjR7gt-15" target="tO6OiS4Cmi07xufjR7gt-18">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="tO6OiS4Cmi07xufjR7gt-15" value="&amp;lt;&amp;lt;Layer&amp;gt;&amp;gt;&lt;br&gt;Interaction Database&lt;br&gt;Customer" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="480" y="570" width="190" height="120" as="geometry" />
+          <mxGeometry x="610" y="570" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="tO6OiS4Cmi07xufjR7gt-17" value="&amp;lt;&amp;lt;Layer&amp;gt;&amp;gt;&lt;br&gt;Entity&lt;br&gt;Companies and Banks" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="319" y="220" width="190" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="tO6OiS4Cmi07xufjR7gt-18" value="&amp;lt;&amp;lt;Layer&amp;gt;&amp;gt;&lt;br&gt;Entity&lt;br&gt;Customer" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="310" y="570" width="190" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
