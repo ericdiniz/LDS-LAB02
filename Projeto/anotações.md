@@ -1,9 +1,4 @@
-# Diagramas do Projeto
 
-### Diagrama de Caso de Uso
-![diagrama de caso de uso](./DCU.png)
-
-### REQUISITOS FUNCIONAIS
 
 - Todos
 1. Cadastrar no sistema;
