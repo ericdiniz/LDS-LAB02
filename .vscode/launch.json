@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-AlugarAutomovelApplication<alugarAutomovel>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.ldslab02.alugarAutomovel.AlugarAutomovelApplication",
+      "projectName": "alugarAutomovel",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
