@@ -1,3 +1,5 @@
 {
-  "java.compile.nullAnalysis.mode": "automatic"
+  "java.compile.nullAnalysis.mode": "automatic",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
