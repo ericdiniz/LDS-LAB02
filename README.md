@@ -33,6 +33,23 @@ O sistema pode ser subdividido em dois subsistemas: um para gestão de pedidos e
 
 ###  Histórias do Usuário
 
+
+Agentes: Cliente, Agente.
+
+
+** Cliente**
+- Como um cliente, gostaria de introduzir um pedido de aluguel pessoal.
+- Como um cliente, gostaria de modificar um pedido de aluguel pessoal.
+- Como um cliente, gostaria de consultar um pedido de aluguel pessoal.
+- Como um cliente, gostaria de cancelar um pedido de aluguel pessoal.
+
+
+** Agente - empresa e bancos **
+- Como um agente, gostaria de modificar um pedido de aluguel de um cliente.
+- Como um agente, gostaria de avaliar os pedido de aluguel de um cliente do ponto de vista financeiro para aprovar um contrato.
+- Como um agente, gostaria de armazenar os dados de identificação dos clientes, como RG, CPF, nome, endereço, profissão, rendimentos.
+
+
 ### Diagrama de Casos de Uso
 ![Diagrama de cado de uso](./Projeto/DCU.png)
 
