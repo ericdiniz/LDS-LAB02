@@ -48,7 +48,9 @@ Agentes: Cliente, Agente.
 - Como um agente, gostaria de modificar um pedido de aluguel de um cliente.
 - Como um agente, gostaria de avaliar os pedido de aluguel de um cliente do ponto de vista financeiro para aprovar um contrato.
 - Como um agente, gostaria de armazenar os dados de identificação dos clientes, como RG, CPF, nome, endereço, profissão, rendimentos.
-
+- Como um agente, gostaria de acessar os dados de identificação dos clientes.
+- Como um agente, gostaria de definir os tipos de contratos ofertados para os clientes.
+- Como um agente, gostaria de poder conceder contratos de crédito a um cliente.
 
 ### Diagrama de Casos de Uso
 ![Diagrama de cado de uso](./Projeto/DCU.png)
