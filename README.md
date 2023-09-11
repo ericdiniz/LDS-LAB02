@@ -58,4 +58,4 @@ Agentes: Cliente, Agente.
 ### Diagrama de Classes
 ![Diagrama de classe](./Projeto/DiagramaClasse.jpg)
 ### Diagrama de Pacotes
-![Diagrama de pacotes](./Projeto/DiagramasPacote-v2.jpg)
+![Diagrama de pacotes](./Projeto/Pacote-v3.png)
