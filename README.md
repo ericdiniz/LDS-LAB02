@@ -63,10 +63,10 @@ Agentes: Cliente, Agente.
 ## Sprint 02:
 
 ### Diagrama de Casos de Uso
-![Diagrama de cado de uso](./Projeto/DCU.png)
+![Diagrama de cado de uso](./Projeto/DCU-v2.png)
 
 ### Diagrama de Classes
-![Diagrama de classe](./Projeto/DiagramaClasse.jpg)
+![Diagrama de classe](./Projeto/Classe-v2.png)
 
 ### Diagrama de Pacotes
 ![Diagrama de pacotes](./Projeto/Pacote-v3.png)
