@@ -58,4 +58,19 @@ Agentes: Cliente, Agente.
 ### Diagrama de Classes
 ![Diagrama de classe](./Projeto/DiagramaClasse.jpg)
 ### Diagrama de Pacotes
+![Diagrama de pacotes](./Projeto/DiagramasPacote-v2.jpg)
+
+## Sprint 02:
+
+### Diagrama de Casos de Uso
+![Diagrama de cado de uso](./Projeto/DCU.png)
+
+### Diagrama de Classes
+![Diagrama de classe](./Projeto/DiagramaClasse.jpg)
+
+### Diagrama de Pacotes
 ![Diagrama de pacotes](./Projeto/Pacote-v3.png)
+
+### Diagrama de Componentes
+
+Sendo feito por Renato Paganini
