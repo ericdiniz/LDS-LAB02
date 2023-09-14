@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -22,7 +24,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode
-public class User {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class User {
     public static final String TABLE_NAME = "User";
 
     public interface CreateUser {
@@ -35,7 +38,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique = true)
+    @Column(name = "id_user", unique = true)
     private Long id;
 
     @Column(name = "login", unique = true, length = 100, nullable = false)

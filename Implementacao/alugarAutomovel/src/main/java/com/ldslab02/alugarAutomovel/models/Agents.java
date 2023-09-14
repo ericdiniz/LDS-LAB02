@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -26,29 +27,30 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = false)
+@PrimaryKeyJoinColumn(name = "id_user")
 public class Agents extends User {
-        public static final String TABLE_NAME = "Agents";
+    public static final String TABLE_NAME = "Agents";
 
-        public interface CreateAgents {
+    public interface CreateAgents {
 
-        }
+    }
 
-        public interface UpdateAgents {
+    public interface UpdateAgents {
 
-        }
+    }
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name = "id", unique = true)
-        private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_agents", unique = true)
+    private Long id;
 
-        @Column(name = "cnpj", unique = true, length = 100, nullable = false)
-        @NotNull(groups = CreateAgents.class)
-        @NotEmpty(groups = CreateAgents.class)
-        @Size(groups = CreateAgents.class, min = 2, max = 20)
-        private String cnpj;
+    @Column(name = "cnpj", unique = true, length = 100, nullable = false)
+    @NotNull(groups = CreateAgents.class)
+    @NotEmpty(groups = CreateAgents.class)
+    @Size(groups = CreateAgents.class, min = 2, max = 20)
+    private String cnpj;
 
-        @OneToOne(fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
-        @JoinColumn(name = "id")
-        private User user;
+    @OneToOne(fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_user")
+    private User user;
 }
