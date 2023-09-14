@@ -1,6 +1,9 @@
 package com.ldslab02.alugarAutomovel.models;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,7 +28,8 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class User {
+@DiscriminatorColumn(name = "user_type")
+public abstract class User implements Serializable {
     public static final String TABLE_NAME = "User";
 
     public interface CreateUser {
