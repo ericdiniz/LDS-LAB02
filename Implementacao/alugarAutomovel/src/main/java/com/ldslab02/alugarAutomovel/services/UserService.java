@@ -16,7 +16,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public User findbyId(Long id) {
+    public User findbyIdUser(Long id) {
         Optional<User> user = this.userRepository.findById(id);
         return user.orElseThrow(
                 () -> new RuntimeException("Usuário não encontrado" + id + "Tipo: " + User.class.getName()));
@@ -31,13 +31,13 @@ public class UserService {
 
     @Transactional
     public User updateUser(User obj) {
-        User newObj = findbyId(obj.getId());
+        User newObj = findbyIdUser(obj.getId());
         newObj.setPassword(obj.getPassword());
         return this.userRepository.save(newObj);
     }
 
     public void deleteUser(Long id) {
-        findbyId(id);
+        findbyIdUser(id);
         try {
             this.userRepository.deleteById(id);
         } catch (Exception e) {
