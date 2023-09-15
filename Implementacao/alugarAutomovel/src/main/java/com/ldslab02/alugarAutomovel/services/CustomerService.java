@@ -3,12 +3,14 @@ package com.ldslab02.alugarAutomovel.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.ldslab02.alugarAutomovel.models.Customer;
 import com.ldslab02.alugarAutomovel.repositories.CustomerRepository;
 
 import jakarta.transaction.Transactional;
 
+@Service
 public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;

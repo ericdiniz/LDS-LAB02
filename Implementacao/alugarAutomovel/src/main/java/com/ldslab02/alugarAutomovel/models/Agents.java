@@ -1,5 +1,7 @@
 package com.ldslab02.alugarAutomovel.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -50,5 +52,6 @@ public class Agents extends User {
 
     @OneToOne(fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_user")
+    @JsonIgnore
     private User user;
 }
