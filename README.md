@@ -73,4 +73,3 @@ Agentes: Cliente, Agente.
 
 ### Diagrama de Componentes
 ![Diagrama de Componentes](./Projeto/diagrama_componentes.png)
-Sendo feito por Renato Paganini
