@@ -53,23 +53,40 @@ Agentes: Cliente, Agente.
 - Como um agente, gostaria de poder conceder contratos de crédito a um cliente.
 
 ### Diagrama de Casos de Uso
-![Diagrama de cado de uso](./Projeto/DCU.png)
+![Diagrama de cado de uso](./Projeto/img-dcu/DCU.png)
 
 ### Diagrama de Classes
-![Diagrama de classe](./Projeto/DiagramaClasse.jpg)
+![Diagrama de classe](.img-dcu/Projeto/img-classe/../../../Projeto/img-classe/DiagramaClasse.jpg)
 ### Diagrama de Pacotes
-![Diagrama de pacotes](./Projeto/DiagramasPacote-v2.jpg)
+![Diagrama de pacotes](./Projeto/img-pacote/DiagramasPacote-v2.jpg)
 
 ## Sprint 02:
 
 ### Diagrama de Casos de Uso
-![Diagrama de cado de uso](./Projeto/DCU-v2.png)
+![Diagrama de cado de uso](./Projeto/img-dcu/DCU-v2.png)
 
 ### Diagrama de Classes
-![Diagrama de classe](./Projeto/Classe-v2.png)
+![Diagrama de classe](./Projeto/img-classe/Classe-v2.png)
 
 ### Diagrama de Pacotes
-![Diagrama de pacotes](./Projeto/Pacote-v3.png)
+![Diagrama de pacotes](./Projeto/img-pacote/Pacote-v3.png)
 
 ### Diagrama de Componentes
-![Diagrama de Componentes](./Projeto/diagrama_componentes.png)
+![Diagrama de Componentes](./Projeto/img-componente/diagrama_componentes.png)
+
+## Sprint 03:
+
+### Diagrama de Casos de Uso
+![Diagrama de cado de uso](./Projeto/img-dcu/DCU-v2.png)
+
+### Diagrama de Classes
+![Diagrama de classe](./Projeto/img-classe/Classe-v2.png)
+
+### Diagrama de Pacotes
+![Diagrama de pacotes](./Projeto/img-pacote/Pacote-v3.png)
+
+### Diagrama de Componentes
+![Diagrama de Componentes](./Projeto/img-componente/diagrama_componentes.png)
+
+### Diagrama de Implantação
+![Diagrama de Implantação]()
