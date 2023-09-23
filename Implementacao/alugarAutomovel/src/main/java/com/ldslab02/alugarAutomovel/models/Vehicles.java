@@ -38,10 +38,15 @@ public class Vehicles {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "matricula_vehicle", unique = true)
+    @Column(name = "id_vehicle", unique = true)
+    private Long id;
+
+    @Column(name = "matricula")
+    @NotNull(groups = CreateVehicle.class)
+    @NotEmpty(groups = CreateVehicle.class)
     private Long matricula;
 
-    @Column(name = "year", unique = true)
+    @Column(name = "year")
     @NotNull(groups = CreateVehicle.class)
     @NotEmpty(groups = CreateVehicle.class)
     private Integer year;

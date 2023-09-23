@@ -2,10 +2,14 @@ package com.ldslab02.alugarAutomovel.models;
 
 import java.util.List;
 
+import org.hibernate.annotations.Cascade;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -13,7 +17,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -52,9 +55,10 @@ public class RentalRequest {
     @JsonIgnore
     private Customer customer;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "matricula_vehicle")
-    @JsonIgnore
+    @Column(name = "vehicles", nullable = false)
+    @ElementCollection(fetch = FetchType.LAZY, targetClass = Double.class)
+    @CollectionTable(joinColumns = @JoinColumn(name = "id_vehicle"))
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<Vehicles> vehicles;
 
     @Column(name = "date", length = 100, nullable = false)
