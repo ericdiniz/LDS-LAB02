@@ -1,28 +1,34 @@
-import * as React from "react";
+import { useEffect, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import { Link } from "react-router-dom";
 
-import CarRentalIcon from '@mui/icons-material/CarRental';
+import CarRentalIcon from "@mui/icons-material/CarRental";
 import Typography from "@mui/material/Typography";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-export default function LoginForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+const initialForm = {
+  login: "",
+  password: "",
+};
+
+const handleSubmit = (event) => {};
+
+const LoginForm = () => {
+  const [form, setForm] = useState(initialForm);
+
+  const handleChangeForm = (event) => {
+    const { name, value } = event.target;
+    setForm({ ...form, [name]: value });
   };
+
+  // useEffect(() => {
+  //   console.log(form);
+  // }, [form]);
 
   return (
     <Box>
@@ -71,11 +77,13 @@ export default function LoginForm() {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
+                id="login"
+                label="CNPJ/CPF"
+                name="login"
+                autoComplete="login"
+                helperText="Only numbers"
                 autoFocus
+                onChange={handleChangeForm}
               />
               <TextField
                 margin="normal"
@@ -86,6 +94,7 @@ export default function LoginForm() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={handleChangeForm}
               />
 
               <Button
@@ -94,18 +103,14 @@ export default function LoginForm() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-              ENTRAR
+                ENTRAR
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
-                  Redefinir senha
-                  </Link>
+                  <Link to={"recover"}>Redefinir senha</Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Não tem uma conta? Registrar!"}
-                  </Link>
+                  <Link to={"register"}>Não tem uma conta? Registrar!</Link>
                 </Grid>
               </Grid>
             </Box>
@@ -114,4 +119,6 @@ export default function LoginForm() {
       </Grid>
     </Box>
   );
-}
+};
+
+export default LoginForm;
