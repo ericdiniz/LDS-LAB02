@@ -1,19 +1,73 @@
-import * as React from "react";
+import { useEffect, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
+const initialForm = {
+  name: "",
+  cpf: "",
+  rg: "",
+  address: "",
+  profession: "",
+  income0: "",
+  income1: "",
+  income2: "",
+  password: "",
+  confirmPassword: "",
+};
+
+const validatePassword = (password, confirmPassword) => {
+  return password === confirmPassword;
+};
 
 const SignUpCustomer = () => {
-  const handleSubmit = (event) => {};
+  const [form, setForm] = useState(initialForm);
+
+  useEffect(() => {
+    console.log(form);
+  }, [form]);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const passwordEqual = validatePassword(form.password, form.confirmPassword);
+    if (!passwordEqual) {
+      return alert("As senhas não são iguais");
+    }
+
+    const finalform = {
+      name: form.name,
+      login: form.cpf,
+      cpf: form.cpf,
+      rg: form.rg,
+      address: form.address,
+      profession: form.profession,
+      income: [form.income0, form.income1, form.income2],
+      password: form.password,
+    };
+
+    console.log(finalform);
+    try {
+      await axios.post("http://localhost:8099/customer", finalform);
+      console.log("Conta registrada com sucesso");
+    } catch (error) {
+      alert("Ocorreu um erro", error);
+      console.log(error);
+    }
+  };
+
+  const handleChangeForm = (event) => {
+    const { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -42,21 +96,37 @@ const SignUpCustomer = () => {
                 id="name"
                 label="Nome"
                 autoFocus
+                onChange={handleChangeForm}
               />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField required fullWidth id="cpf" label="CPF" name="cpf" />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField required fullWidth id="rg" label="RG" name="rg" />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 required
                 fullWidth
-                id="adress"
+                id="cpf"
+                label="CPF"
+                name="cpf"
+                onChange={handleChangeForm}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                id="rg"
+                label="RG"
+                name="rg"
+                onChange={handleChangeForm}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                id="address"
                 label="Endereço"
-                name="adress"
+                name="address"
+                onChange={handleChangeForm}
               />
             </Grid>
             <Grid item xs={12}>
@@ -65,7 +135,8 @@ const SignUpCustomer = () => {
                 fullWidth
                 id="profession"
                 label="Profissão"
-                name="adress"
+                name="profession"
+                onChange={handleChangeForm}
               />
             </Grid>
             <Grid item xs={12}>
@@ -76,6 +147,7 @@ const SignUpCustomer = () => {
                 label="Senha"
                 type="password"
                 id="password"
+                onChange={handleChangeForm}
               />
             </Grid>
             <Grid item xs={12}>
@@ -86,6 +158,7 @@ const SignUpCustomer = () => {
                 label="Confirmar Senha"
                 type="password"
                 id="confirmPassword"
+                onChange={handleChangeForm}
               />
             </Grid>
 
@@ -99,30 +172,33 @@ const SignUpCustomer = () => {
               <TextField
                 required
                 fullWidth
-                name="income-0"
+                name="income0"
                 label="valor"
                 type="text"
-                id="income-0"
+                id="income0"
+                onChange={handleChangeForm}
               />
             </Grid>
             <Grid item xs={4}>
               <TextField
                 required
                 fullWidth
-                name="income-1"
+                name="income1"
                 label="valor"
                 type="text"
-                id="income-1"
+                id="income1"
+                onChange={handleChangeForm}
               />
             </Grid>
             <Grid item xs={4}>
               <TextField
                 required
                 fullWidth
-                name="income-2"
+                name="income2"
                 label="valor"
                 type="text"
-                id="income-2"
+                id="income2"
+                onChange={handleChangeForm}
               />
             </Grid>
           </Grid>
@@ -131,6 +207,7 @@ const SignUpCustomer = () => {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
+            onClick={handleSubmit}
           >
             Registrar
           </Button>

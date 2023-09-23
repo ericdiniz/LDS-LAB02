@@ -10,16 +10,37 @@ import { Link } from "react-router-dom";
 
 import CarRentalIcon from "@mui/icons-material/CarRental";
 import Typography from "@mui/material/Typography";
+import axios from "axios";
 
 const initialForm = {
   login: "",
   password: "",
 };
 
-const handleSubmit = (event) => {};
-
 const LoginForm = () => {
   const [form, setForm] = useState(initialForm);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const isCPF = form.login.length == 11 ? true : false;
+
+    if (CPF) {
+      try {
+        const res = axios.get("http://localhost:8099/customer");
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      try {
+        const res = axios.get("http://localhost:8099/agent");
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
 
   const handleChangeForm = (event) => {
     const { name, value } = event.target;

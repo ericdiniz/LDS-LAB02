@@ -1,19 +1,58 @@
-import * as React from "react";
+import { useEffect, useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
+const initialForm = {
+  cnpj: "",
+  password: "",
+  confirmPassword: "",
+};
+
+const validatePassword = (password, confirmPassword) => {
+  return password === confirmPassword;
+};
 
 const SignUpAgent = () => {
-  const handleSubmit = (event) => {};
+  const [form, setForm] = useState(initialForm);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const passwordEqual = validatePassword(form.password, form.confirmPassword);
+    if (!passwordEqual) {
+      return alert("As senhas não são iguais");
+    }
+
+    const finalForm = {
+      login: form.cnpj,
+      cnpj: form.cnpj,
+      password: form.password,
+    };
+
+    try {
+      await axios.post("http://localhost:8099/agents", finalForm);
+      console.log("Conta registrada com sucesso");
+    } catch (error) {
+      alert("Ocorreu um erro", error);
+      console.log(error);
+    }
+  };
+
+  const handlChageForm = (event) => {
+    const { value, name } = event.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  useEffect(() => {
+    console.log(form);
+  }, [form]);
 
   return (
     <Container component="main" maxWidth="xs">
@@ -41,6 +80,7 @@ const SignUpAgent = () => {
                 id="cnpj"
                 label="CNPJ"
                 name="cnpj"
+                onChange={handlChageForm}
               />
             </Grid>
 
@@ -52,6 +92,7 @@ const SignUpAgent = () => {
                 label="Senha"
                 type="password"
                 id="password"
+                onChange={handlChageForm}
               />
             </Grid>
             <Grid item xs={12}>
@@ -62,6 +103,7 @@ const SignUpAgent = () => {
                 label="Confirmar Senha"
                 type="password"
                 id="confirmPassword"
+                onChange={handlChageForm}
               />
             </Grid>
           </Grid>
