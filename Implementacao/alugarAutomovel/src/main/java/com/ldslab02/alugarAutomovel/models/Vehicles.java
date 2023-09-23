@@ -1,5 +1,7 @@
 package com.ldslab02.alugarAutomovel.models;
 
+import java.util.List;
+
 import com.ldslab02.alugarAutomovel.models.Customer.CreateCustomer;
 
 import jakarta.persistence.Column;
@@ -7,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -71,4 +74,8 @@ public class Vehicles {
 
     @Column(name = "blocked")
     private boolean blocked;
+
+    @ManyToMany(mappedBy = "vehicles")
+    private List<RentalRequest> rentalRequests;
+
 }

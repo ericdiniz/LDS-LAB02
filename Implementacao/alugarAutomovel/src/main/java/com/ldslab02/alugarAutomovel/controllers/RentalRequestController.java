@@ -12,33 +12,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ldslab02.alugarAutomovel.services.RentalRequestService;
+import com.ldslab02.alugarAutomovel.DTO.RentalRequestResponseDTO;
 import com.ldslab02.alugarAutomovel.models.RentalRequest;
+import com.ldslab02.alugarAutomovel.services.RentalRequestService;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @RestController
 @RequestMapping("/orders")
 public class RentalRequestController {
 
-    // The controller depends on the service class
     @Autowired
     private RentalRequestService rentalRequestService;
 
-    // All orders
     @GetMapping
     public List<RentalRequest> getAllRentalRequest() {
         return rentalRequestService.getAllRentalRequests();
     }
 
-    // Specific order
     @GetMapping("/{id}")
-    public RentalRequest getRentalRequest(@PathVariable Long id) {
-        return rentalRequestService.getRentalRequest(id);
+    public RentalRequestResponseDTO getRentalRequest(@PathVariable Long id) {
+        RentalRequest rentalRequest = rentalRequestService.getRentalRequest(id);
+        if (rentalRequest != null) {
+            return new RentalRequestResponseDTO(rentalRequest);
+        } else {
+            throw new EntityNotFoundException("Solicitação de aluguel não encontrada com o ID: " + id);
+        }
     }
 
-    // POST HTTP
-    @PostMapping
-    public RentalRequest createRentalRequest(@RequestBody RentalRequest rentalRequest) {
-        return rentalRequestService.createRentalRequest(rentalRequest);
+    @PostMapping("/createWithVehicles/{id}")
+    public RentalRequest createRentalRequestWithVehicles(@RequestBody RentalRequest rentalRequest,
+            @PathVariable Long id) {
+        return rentalRequestService.createRentalRequestWithVehicles(rentalRequest, id);
     }
 
     @PutMapping("/{id}")
@@ -50,5 +55,4 @@ public class RentalRequestController {
     public void deleteRentalRequest(@PathVariable Long id) {
         rentalRequestService.deleteRentalRequest(id);
     }
-
 }

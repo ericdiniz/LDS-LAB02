@@ -7,19 +7,19 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum EnumStatusRentalRequest {
-    ABERTO(1, "Em Aberto"),
-    ANALISE(2, "Em Analise"),
-    EXECUCAO(3, "Em Execucao");
+public enum EnumContrato {
+    CLIENTE(1, "Propriedade do Cliente"),
+    BANCO(2, "Propriedade do Banco"),
+    EMPRESAS(3, "Propriedade da Empresa");
 
     private Integer code;
     private String description;
 
-    public static EnumStatusRentalRequest toEnum(Integer code) {
+    public static EnumContrato toEnum(Integer code) {
         if (Objects.isNull(code)) {
             return null;
         }
-        for (EnumStatusRentalRequest x : EnumStatusRentalRequest.values()) {
+        for (EnumContrato x : EnumContrato.values()) {
             if (code.equals(x.getCode())) {
                 return x;
             }

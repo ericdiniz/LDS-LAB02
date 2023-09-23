@@ -1,21 +1,20 @@
 package com.ldslab02.alugarAutomovel.models;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import org.hibernate.annotations.Cascade;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
@@ -55,11 +54,18 @@ public class RentalRequest {
     @JsonIgnore
     private Customer customer;
 
-    @Column(name = "vehicles", nullable = false)
-    @ElementCollection(fetch = FetchType.LAZY, targetClass = Double.class)
-    @CollectionTable(joinColumns = @JoinColumn(name = "id_vehicle"))
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @ManyToMany
+    @JoinTable(name = "rental_request_vehicles", // Nome da tabela de junção
+            joinColumns = @JoinColumn(name = "rental_request_id"), inverseJoinColumns = @JoinColumn(name = "vehicle_id"))
+    @JsonIgnore
     private List<Vehicles> vehicles;
+
+    public List<Vehicles> getVehicles() {
+        if (vehicles == null) {
+            vehicles = new ArrayList<>();
+        }
+        return vehicles;
+    }
 
     @Column(name = "date", length = 100, nullable = false)
     @NotNull(groups = CreateRentalRequest.class)

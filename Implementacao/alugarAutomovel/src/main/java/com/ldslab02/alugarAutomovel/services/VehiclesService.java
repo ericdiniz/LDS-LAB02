@@ -1,5 +1,6 @@
 package com.ldslab02.alugarAutomovel.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,10 @@ public class VehiclesService {
         Optional<Vehicles> vehicle = this.vehiclesRepository.findById(id);
         return vehicle.orElseThrow(
                 () -> new RuntimeException("Veículo não encontrado" + id + "Tipo: " + Vehicles.class.getName()));
+    }
+
+    public List<Vehicles> getVehiclesByIds(List<Long> vehicleIds) {
+        return vehiclesRepository.findAllById(vehicleIds);
     }
 
     @Transactional
