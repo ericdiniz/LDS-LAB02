@@ -41,7 +41,7 @@ public class VehiclesService {
         return this.vehiclesRepository.save(newObj);
     }
 
-    public void deleteUser(Long id) {
+    public void deleteVehicles(Long id) {
         findbyIdVehicle(id);
         try {
             this.vehiclesRepository.deleteById(id);
