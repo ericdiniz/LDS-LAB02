@@ -11,12 +11,18 @@ import com.ldslab02.alugarAutomovel.repositories.RentalRequestRepository;
 @Service
 public class RentalRequestService {
 
+    // The service uses the repository that uses Dependency Injection.
+
     @Autowired
     private RentalRequestRepository rentalRequestRepository;
 
-    public List<RentalRequest> getAllRentalRequest() {
+    public List<RentalRequest> getAllRentalRequests() {
         return rentalRequestRepository.findAll();
-        
+
+    }
+
+    public RentalRequest getRentalRequest(Long id) {
+        return rentalRequestRepository.findById(id).orElse(null);
     }
 
 }
