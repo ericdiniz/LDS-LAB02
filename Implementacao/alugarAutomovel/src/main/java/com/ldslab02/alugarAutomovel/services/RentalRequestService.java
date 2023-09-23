@@ -25,4 +25,8 @@ public class RentalRequestService {
         return rentalRequestRepository.findById(id).orElse(null);
     }
 
+    public RentalRequest createRentalRequest(RentalRequest rentalRequest) {
+        return rentalRequestRepository.save(rentalRequest);
+    }
+
 }
