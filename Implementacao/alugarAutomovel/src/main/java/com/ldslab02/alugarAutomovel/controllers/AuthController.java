@@ -1,6 +1,5 @@
 package com.ldslab02.alugarAutomovel.controllers;
 
-import org.aspectj.weaver.loadtime.Agent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -9,10 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ldslab02.alugarAutomovel.models.Customer;
 import com.ldslab02.alugarAutomovel.models.User;
-import com.ldslab02.alugarAutomovel.services.AgentsService;
-import com.ldslab02.alugarAutomovel.services.CustomerService;
+
 import com.ldslab02.alugarAutomovel.services.UserService;
 
 import jakarta.validation.Valid;
