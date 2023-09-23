@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = RentalRequest.TABLE_NAME)
+@Table(name = Vehicles.TABLE_NAME)
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

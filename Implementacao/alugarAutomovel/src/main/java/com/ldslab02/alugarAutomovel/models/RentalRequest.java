@@ -1,5 +1,7 @@
 package com.ldslab02.alugarAutomovel.models;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
@@ -42,7 +44,7 @@ public class RentalRequest {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_pedidoAluguel", unique = true)
+    @Column(name = "id_RentalRequest", unique = true)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -53,7 +55,7 @@ public class RentalRequest {
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "matricula_vehicle")
     @JsonIgnore
-    private Vehicles vehicles;
+    private List<Vehicles> vehicles;
 
     @Column(name = "date", length = 100, nullable = false)
     @NotNull(groups = CreateRentalRequest.class)
