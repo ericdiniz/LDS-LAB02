@@ -18,7 +18,13 @@ public class CustomerService {
     public Customer findbyIdCustomer(Long id) {
         Optional<Customer> customer = this.customerRepository.findById(id);
         return customer.orElseThrow(
-                () -> new RuntimeException("Usuário não encontrado" + id + "Tipo: " + Customer.class.getName()));
+                () -> new RuntimeException("Usuário não encontrado " + id + "Tipo: " + Customer.class.getName()));
+    }
+
+    public Customer findbyCPFCustomer(String CPF) {
+        Optional<Customer> customer = this.customerRepository.findByCpf(CPF);
+        return customer.orElseThrow(
+                () -> new RuntimeException("Usuário não encontrado " + CPF + "Tipo: " + Customer.class.getName()));
     }
 
     @Transactional

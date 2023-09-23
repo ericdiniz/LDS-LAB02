@@ -29,7 +29,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "user_type")
-public abstract class User implements Serializable {
+public class User implements Serializable {
     public static final String TABLE_NAME = "User";
 
     public interface CreateUser {

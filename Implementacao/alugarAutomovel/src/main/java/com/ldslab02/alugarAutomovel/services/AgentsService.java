@@ -21,6 +21,12 @@ public class AgentsService {
                 () -> new RuntimeException("Usuário não encontrado" + id + "Tipo: " + Agents.class.getName()));
     }
 
+     public Agents findbyCNPJAgents(String cnpj) {
+        Optional<Agents> user = this.agentsRepository.findByCnpj(cnpj);
+        return user.orElseThrow(
+                () -> new RuntimeException("Usuário não encontrado" + cnpj + "Tipo: " + Agents.class.getName()));
+    }
+
     @Transactional
     public Agents createAgents(Agents obj) {
         obj.setId(null);
