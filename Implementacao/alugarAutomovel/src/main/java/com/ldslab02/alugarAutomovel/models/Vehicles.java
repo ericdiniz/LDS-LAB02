@@ -43,13 +43,13 @@ public class Vehicles {
 
     @Column(name = "matricula")
     @NotNull(groups = CreateVehicle.class)
-    @NotEmpty(groups = CreateVehicle.class)
     private Long matricula;
 
     @Column(name = "year")
     @NotNull(groups = CreateVehicle.class)
     @NotEmpty(groups = CreateVehicle.class)
-    private Integer year;
+    @Size(groups = CreateVehicle.class, min = 4, max = 4)
+    private String year;
 
     @Column(name = "brand", length = 100, nullable = false)
     @NotNull(groups = CreateVehicle.class)
@@ -60,13 +60,13 @@ public class Vehicles {
     @Column(name = "model", length = 100, nullable = false)
     @NotNull(groups = CreateVehicle.class)
     @NotEmpty(groups = CreateVehicle.class)
-    @Size(groups = CreateCustomer.class, min = 2, max = 100)
+    @Size(groups = CreateVehicle.class, min = 2, max = 100)
     private String model;
 
     @Column(name = "numberPlate", length = 100, nullable = false)
     @NotNull(groups = CreateVehicle.class)
     @NotEmpty(groups = CreateVehicle.class)
-    @Size(groups = CreateCustomer.class, min = 2, max = 100)
+    @Size(groups = CreateVehicle.class, min = 2, max = 100)
     private String numberPlate;
 
     @Column(name = "blocked")
