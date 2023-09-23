@@ -50,7 +50,7 @@ public class Customer extends User {
     @Column(name = "id_customer", unique = true)
     private Long id;
 
-    @Column(name = "name",  length = 100, nullable = false)
+    @Column(name = "name", length = 100, nullable = false)
     @NotNull(groups = CreateCustomer.class)
     @NotEmpty(groups = CreateCustomer.class)
     @Size(groups = CreateCustomer.class, min = 2, max = 100)
@@ -68,28 +68,25 @@ public class Customer extends User {
     @Size(groups = CreateCustomer.class, min = 2, max = 20)
     private String rg;
 
-    @Column(name = "address",  length = 100, nullable = false)
+    @Column(name = "address", length = 100, nullable = false)
     @NotNull(groups = CreateCustomer.class)
     @NotEmpty(groups = CreateCustomer.class)
     @Size(groups = CreateCustomer.class, min = 2, max = 100)
     private String address;
 
-    @Column(name = "profession",  length = 100, nullable = false)
+    @Column(name = "profession", length = 100, nullable = false)
     @NotNull(groups = CreateCustomer.class)
     @NotEmpty(groups = CreateCustomer.class)
     @Size(groups = CreateCustomer.class, min = 2, max = 100)
     private String profession;
 
-    @Column(name = "income",  nullable = false)
+    @Column(name = "income", nullable = false)
     @NotNull(groups = CreateCustomer.class)
     @NotEmpty(groups = CreateCustomer.class)
     @Size(groups = CreateCustomer.class, min = 0)
     @ElementCollection(fetch = FetchType.LAZY, targetClass = Double.class)
-    @CollectionTable(name = "Incomes", // Nome da tabela para armazenar a coleção
-            joinColumns = @JoinColumn(name = "customer_id") // Nome da coluna que fará referência à entidade principal
-                                                            // (Customer)
-    )
-    @Cascade(org.hibernate.annotations.CascadeType.ALL) // Configura o CascadeType.ALL
+    @CollectionTable(name = "Incomes", joinColumns = @JoinColumn(name = "customer_id"))
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private List<Double> income;
 
     @OneToOne(fetch = FetchType.LAZY, orphanRemoval = true, cascade = CascadeType.ALL)
