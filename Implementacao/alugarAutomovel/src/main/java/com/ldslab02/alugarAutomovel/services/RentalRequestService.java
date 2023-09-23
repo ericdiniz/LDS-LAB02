@@ -41,4 +41,8 @@ public class RentalRequestService {
         }
     }
 
+    public void deleteRentalRequest(Long id) {
+        rentalRequestRepository.deleteById(id);
+    }
+
 }
