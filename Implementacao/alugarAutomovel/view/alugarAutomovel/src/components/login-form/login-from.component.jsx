@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import CarRentalIcon from "@mui/icons-material/CarRental";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const initialForm = {
   login: "",
@@ -19,26 +20,36 @@ const initialForm = {
 
 const LoginForm = () => {
   const [form, setForm] = useState(initialForm);
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const isCPF = form.login.length == 11 ? true : false;
+    try {
+      const res = await axios.post("http://localhost:8099/auth", form);
+      console.log(res);
+      localStorage.setItem("user", JSON.stringify(res.data));
 
-    if (CPF) {
-      try {
-        const res = axios.get("http://localhost:8099/customer");
-        console.log(res);
-      } catch (error) {
-        console.log(error);
+      const customer = res.data.cpf ? true : false;
+      const agent = res.data.cnpj ? true : false;
+
+      if (customer) {
+        localStorage.setItem(
+          "homePage",
+          JSON.stringify({ route: "/customer-home" })
+        );
+        navigate("/customer-home");
+      } else if (agent) {
+        localStorage.setItem(
+          "homePage",
+          JSON.stringify({ route: "/agente-home" })
+        );
+        navigate("/agente-home");
+      } else {
+        navigate("/error");
       }
-    } else {
-      try {
-        const res = axios.get("http://localhost:8099/agent");
-        console.log(res);
-      } catch (error) {
-        console.log(error);
-      }
+    } catch (error) {
+      alert("Um erro ocorreu: ", error);
     }
   };
 
