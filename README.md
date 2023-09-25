@@ -85,8 +85,5 @@ Agentes: Cliente, Agente.
 ### Diagrama de Pacotes
 ![Diagrama de pacotes](./Projeto/img-pacote/Pacote-v3.png)
 
-### Diagrama de Componentes
+### Diagrama de Componentes e Implantação
 ![Diagrama de Componentes](./Projeto/img-componente/diagrama_componentes.png)
-
-### Diagrama de Implantação
-![Diagrama de Implantação]()
